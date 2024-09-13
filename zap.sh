@@ -5,7 +5,7 @@ echo $PORT
 # first run this
 chmod 777 $(pwd)
 echo $(id -u):$(id -g)
-docker run -v $(pwd):/zap/wrk/:rw -t quay.io/anshuk6469/owaspzap-report zap-api-scan.py -t $applicationURL:$PORT/v3/api-docs -f openapi -r zap_report.html
+docker run -v $(pwd):/zap/wrk/:rw -t ghcr.io/zaproxy/zaproxy:stable zap-api-scan.py -t $applicationURL:$PORT/v3/api-docs -f openapi -r zap_report.html
 
 
 # comment above cmd and uncomment below lines to run with CUSTOM RULES
